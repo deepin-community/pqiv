@@ -1,15 +1,26 @@
-Source: template-repository
-Section: unknown
+Source: pqiv
+Section: graphics
 Priority: optional
-Maintainer: Tsic404 <liuheng@deepin.org>
-Build-Depends: debhelper (>= 11)
-Standards-Version: 4.1.3
-Homepage: https://github.com/deepin-community/template-repository
-#Vcs-Browser: https://salsa.debian.org/debian/deepin-community-template-repository
-#Vcs-Git: https://salsa.debian.org/debian/deepin-community-template-repository.git
+Maintainer: Phillip Berndt <mail@pberndt.com>
+Build-Depends: debhelper-compat (= 12), libgtk-3-dev, libmagickwand-dev, libarchive-dev, libpoppler-glib-dev, libavformat-dev, libavcodec-dev, libswscale-dev, libavutil-dev, libwebp-dev
+Standards-Version: 4.6.1
+Homepage: https://github.com/phillipberndt/pqiv
+Vcs-Git: https://salsa.debian.org/pberndt-guest/pqiv.git
+Vcs-Browser: https://salsa.debian.org/pberndt-guest/pqiv
 
-Package: template-repository
+Package: pqiv
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Recommends: ${recommends:Depends}
+Description: Powerful image viewer with minimal UI
+ pqiv is a powerful GTK 3 based command-line image viewer with a minimal UI. It
+ is highly customizable, can be fully controlled from scripts, and has support
+ for various file formats including PDF, Postscript, video files and archives.
+ It is optimized to be quick and responsive.
+ .
+ It comes with support for animations, slideshows, transparency, VIM-like key
+ bindings, automated loading of new images as they appear, external image
+ filters, image preloading, and much more.
+ .
+ pqiv started as a Python rewrite of qiv avoiding imlib, but evolved into a
+ much more powerful tool. Today, pqiv stands for powerful quick image viewer.

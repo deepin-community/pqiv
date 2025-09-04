@@ -1,4 +1,21 @@
 #!/usr/bin/make -f
 
+# Do not abbreviate make's output
+export VERBOSE=1
+export DEB_BUILD_MAINT_OPTIONS=hardening=+all
+
+include /usr/share/dpkg/architecture.mk
+ifneq ($(DEB_BUILD_ARCH),$(DEB_HOST_ARCH))
+CONFIGURE_FLAGS += --cross=$(DEB_HOST_GNU_TYPE)
+endif
+
 %:
 	dh $@
+
+
+override_dh_auto_configure:
+	./configure --backends-build=shared $(CONFIGURE_FLAGS)
+
+override_dh_shlibdeps:
+	dh_shlibdeps -Xlib
+	dh_shlibdeps -Xbin -- -precommends
