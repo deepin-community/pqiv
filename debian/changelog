@@ -1,5 +1,146 @@
-template-repository (1.0-1) unstable; urgency=medium
+pqiv (2.13.2-1) unstable; urgency=medium
 
-  * Initial release
+  * New upstream release
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+ -- Phillip Berndt <mail@pberndt.com>  Mon, 20 Jan 2025 20:03:02 +0100
+
+pqiv (2.13.1-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Phillip Berndt <mail@pberndt.com>  Mon, 11 Mar 2024 21:16:55 +0100
+
+pqiv (2.12-2) unstable; urgency=medium
+
+  * Update lintian override info format in d/pqiv.lintian-overrides on line 1.
+  * Set debhelper-compat version in Build-Depends.
+  * Update standards version to 4.6.1, no changes needed.
+
+ -- Phillip Berndt <mail@pberndt.com>  Sun, 18 Feb 2024 12:36:00 +0000
+
+pqiv (2.12-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Adjust gbp tag format to allow automated imports.
+  * Bump Debian standards version to 4.5.1
+  * Bump debhelper standard to 12
+  * Add Lintian override for pixbuf backend not depending on libc.
+  * Set upstream metadata fields: Bug-Database, Bug-Submit, Repository,
+    Repository-Browse.
+
+ -- Phillip Berndt <mail@pberndt.com>  Sun, 29 Nov 2020 12:26:28 +0000
+
+pqiv (2.11-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Fix FTCBFS: (Closes: #913589)
+    + Pass --cross to ./configure.
+
+ -- Phillip Berndt <mail@pberndt.com>  Fri, 30 Nov 2018 21:44:46 +0100
+
+pqiv (2.10.4-1) unstable; urgency=medium
+
+  * New maintainer.
+  * New upstream release.
+    - Includes desktop file (Closes: #873111)
+  * debian/patches/04_unknown_option.diff: Removed, no longer required.
+  * debian/control: Updated description and URL, add optional dependencies.
+  * debian/rules: Compile all backends as shared libraries on Linux.
+    (Closes: #856166)
+
+ -- Phillip Berndt <mail@pberndt.com>  Mon, 23 Apr 2018 19:30:00 +0100
+
+pqiv (2.6-1) unstable; urgency=medium
+
+  * New upstream release.
+  * debian/patches/04_unknown_option.diff: Updated.
+  * debian/control: Standards-Version: 3.9.8.
+
+ -- Bart Martens <bartm@debian.org>  Thu, 04 Aug 2016 18:12:24 +0200
+
+pqiv (2.2-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Bart Martens <bartm@debian.org>  Sun, 26 Oct 2014 13:31:20 +0100
+
+pqiv (2.1.1-1) unstable; urgency=medium
+
+  * New upstream release.
+  * debian/patches/03_binary_name.diff: Removed, now in upstream.
+  * debian/patches/05_ldflags.diff: Removed, now in upstream.
+
+ -- Bart Martens <bartm@debian.org>  Tue, 21 Jan 2014 08:22:08 +0100
+
+pqiv (2.0-1) unstable; urgency=low
+
+  * New upstream release.
+  * debian/clean: No longer removing pqiv.1.
+  * debian/control: Now Build-Depends: libgtk-3-dev.
+  * debian/copyright: Updated for upstream switched to GPL-3.
+  * debian/patches/03_binary_name.diff: Updated for newer upstream release.
+  * debian/patches/04_unknown_option.diff: Added to tolerate unknown options.
+  * debian/patches/05_ldflags.diff: Added to fix lintian hardening-no-relro.
+  * debian/watch: Following changes at github.
+
+ -- Bart Martens <bartm@debian.org>  Mon, 16 Sep 2013 18:46:33 +0000
+
+pqiv (0.12-1) unstable; urgency=low
+
+  * New upstream release.  Closes: #592291.
+  * Switch to dpkg-source 3.0 (quilt) format, debhelper 9, no cdbs.
+  * debian/patches/01_not_qiv.diff: Removed.  Was already disabled.
+  * debian/patches/02_unsupported.diff: Applied and removed.
+  * debian/patches/04_glib_include.diff: Removed.  Now in upstream.
+  * debian/patches/05_keypad.diff: Removed.  Now in upstream.
+  * debian/watch: Updated to new download location.
+
+ -- Bart Martens <bartm@debian.org>  Fri, 18 May 2012 12:41:18 +0000
+
+pqiv (0.11-2) unstable; urgency=low
+
+  * debian/patches/04_glib_include.diff: Closes: #665599.
+  * debian/patches/05_keypad.diff: Closes: #671401.
+  * debian/patches/03_binary_name.diff: Now simply using "pqiv" instead of
+    "BINARY_NAME", and incrementing the 13th position instead of the 12th.
+    Closes: #620370.
+
+ -- Bart Martens <bartm@debian.org>  Sun, 06 May 2012 16:17:18 +0000
+
+pqiv (0.11-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Bart Martens <bartm@debian.org>  Thu, 01 Jul 2010 12:24:44 +0000
+
+pqiv (0.10.1-1) unstable; urgency=low
+
+  * New upstream release.
+  * debian/patches/03_binary_name.diff: Edited to fit new upstream release.
+
+ -- Bart Martens <bartm@debian.org>  Sun, 11 Oct 2009 12:05:40 +0200
+
+pqiv (0.9-1) unstable; urgency=low
+
+  * New upstream release.
+  * To keep using the binary name pqiv:
+    + debian/patches/01_not_qiv.diff: Disabled.
+    + debian/rules: Use --binary-name=pqiv.
+    + debian/patches/03_binary_name.diff: Added.
+
+ -- Bart Martens <bartm@debian.org>  Tue, 19 May 2009 16:48:21 +0200
+
+pqiv (0.8-2) unstable; urgency=low
+
+  * debian/patches/02_unsupported.diff: Added.  Patches debian/pqiv.mime
+    to remove rgb and fits.  Closes: #529000.
+
+ -- Bart Martens <bartm@debian.org>  Mon, 18 May 2009 13:31:21 +0200
+
+pqiv (0.8-1) unstable; urgency=low
+
+  * Initial release in Debian.  Closes: #524578.
+  * debian/patches/01_not_qiv.diff: Added to avoid the name "qiv".
+  * debian/pqiv.mime: Copied from qiv, updated to use "pqiv" instead.
+
+ -- Bart Martens <bartm@debian.org>  Sat, 18 Apr 2009 00:06:55 +0200
